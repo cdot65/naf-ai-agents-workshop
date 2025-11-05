@@ -223,7 +223,19 @@ naf-ai-agents-workshop/
 │   ├── TROUBLESHOOTING.md
 │   ├── WORKSHOP_OUTLINE.md
 │   └── llms.txt                # LLM-friendly documentation
-├── notebooks/                  # Workshop notebooks (101-111)
+├── notebooks/                  # Express Workshop notebooks (streamlined)
+│   ├── 101_type_annotations.ipynb
+│   ├── 102_core_concepts.ipynb
+│   ├── 103_your_first_graph.ipynb
+│   ├── 104_state_management.ipynb
+│   ├── 105_sequential_workflows.ipynb
+│   ├── 106_conditional_routing.ipynb
+│   ├── 107_looping_workflows.ipynb
+│   ├── 108_first_llm_integration.ipynb
+│   ├── 109_conversational_memory.ipynb
+│   ├── 110_react_agents_with_tools.ipynb
+│   └── 111_human_in_the_loop.ipynb
+├── notebooks-extended/         # Comprehensive versions for deep-dive learning
 │   ├── 101_type_annotations.ipynb
 │   ├── 102_core_concepts.ipynb
 │   ├── 103_your_first_graph.ipynb
@@ -446,6 +458,47 @@ make help                  # Show all available commands
 | **111** | [Human-in-the-Loop](notebooks/111_human_in_the_loop.ipynb) | ~20 min | Advanced | Interactive collaboration patterns |
 
 **Self-Study Path**: Additional ~2-3 hours for comprehensive mastery
+
+---
+
+## 📖 Extended Notebooks (Deep-Dive Learning)
+
+For students who want to explore concepts in greater depth, the `notebooks-extended/` directory contains comprehensive versions of all workshop notebooks with:
+
+- **Additional examples and exercises** - More hands-on practice with complex scenarios
+- **Extended explanations** - Deeper coverage of advanced patterns and edge cases
+- **Production patterns** - Additional real-world SCM automation examples
+- **Alternative approaches** - Multiple ways to solve the same problems
+- **Troubleshooting guides** - Common pitfalls and how to avoid them
+
+### When to Use Extended Notebooks
+
+**During the Workshop:**
+- Stick to the `notebooks/` directory for the Express workshop experience
+- Extended notebooks contain too much content for the 3-4 hour format
+
+**After the Workshop:**
+- Work through `notebooks-extended/` at your own pace for mastery
+- Use them as reference material when building your own projects
+- Ideal for self-paced learning or study groups
+
+**Recommended Approach:**
+1. Complete Express workshop using `notebooks/` (3-4 hours)
+2. Build confidence with the core patterns
+3. Return to `notebooks-extended/` for deeper understanding
+4. Focus on notebooks relevant to your specific use cases
+
+### Key Differences
+
+| Feature | `notebooks/` (Express) | `notebooks-extended/` (Comprehensive) |
+|---------|----------------------|-----------------------------------|
+| Duration per notebook | 10-40 min | 30-60 min |
+| Content focus | Core concepts, survey | Deep-dive, mastery |
+| Examples | Essential patterns | Multiple approaches |
+| Exercises | Guided practice | Challenge problems |
+| Best for | Workshop delivery | Self-paced learning |
+
+---
 
 ### Detailed Notebook Descriptions
 
@@ -786,6 +839,8 @@ make help                  # Show all available commands
 - [ ] **109** (25 min): Conversational memory (extended)
 - [ ] **111** (20 min): Human-in-the-loop (advanced)
 
+**💡 Pro Tip**: After completing the self-study notebooks, explore `notebooks-extended/` for even deeper coverage with additional examples, exercises, and production patterns. See the [Extended Notebooks](#-extended-notebooks-deep-dive-learning) section for details.
+
 ---
 
 ## 🔑 Key Patterns
@@ -956,6 +1011,16 @@ Email: [calvin@cdot.io](mailto:calvin@cdot.io)
 - [ ] 107: Looping Workflows - Retry logic and pagination
 - [ ] 109: Conversational Memory - Message history management
 - [ ] 111: Human-in-the-Loop - Interactive collaboration
+
+### Extended Learning (Optional, Self-Paced)
+
+For deeper mastery, work through `notebooks-extended/` versions:
+- [ ] Extended notebooks 101-111 - Comprehensive coverage with additional examples
+- [ ] Complete challenge exercises in extended notebooks
+- [ ] Explore alternative implementation approaches
+- [ ] Study production patterns and troubleshooting guides
+
+See [Extended Notebooks](#-extended-notebooks-deep-dive-learning) for when and how to use these materials.
 
 ### Capstone Project Ideas
 
