@@ -32,43 +32,56 @@
 
 ## 🎯 Overview
 
-This comprehensive workshop teaches network security engineers how to build AI-powered automation agents using LangGraph and Claude AI. Through 11 progressive notebooks (101-111), you'll master everything from basic type annotations to advanced human-in-the-loop patterns, all while building practical automation for Palo Alto Networks Strata Cloud Manager.
+This comprehensive workshop teaches network security engineers how to build AI-powered automation agents using LangGraph and Claude AI. Through **7 workshop notebooks** (101-106, 108, 110) delivered in **3-4 hours**, you'll master everything from type annotations to advanced ReAct agents, with **4 additional notebooks** available for self-study.
+
+**Express Workshop Format (3-4 Hours):**
+
+- **Survey/Exposure Approach**: Core concepts covered in workshop, mastery through self-study
+- **Demo-Focused**: 70/30 instructor demonstrations with student follow-along
+- **Production Patterns**: Real-world SCM automation examples
+- **Cost-Aware**: Foundations (101-106) use mock data - no API costs
+- **Flexible Learning**: All 11 notebooks available for comprehensive self-paced learning
 
 **What Makes This Workshop Unique:**
 
+- **Time-Efficient**: Complete in 3-4 hours with optional deep-dive content
 - **Progressive Learning**: Start with fundamentals, build to advanced AI agents
 - **Network-Focused**: All examples use real network automation scenarios
-- **Production-Ready**: Learn patterns used in real-world deployments
-- **Hands-On**: Every notebook includes practical exercises with SCM configurations
-- **No LLM Required for Foundations**: Learn core graph patterns without API costs (notebooks 101-107)
+- **Dual-Path**: Express workshop + extended self-study materials
 
 ### Key Features
 
 **11 comprehensive notebooks**
+
 - Progressive learning from TypedDict basics to Human-in-the-Loop patterns
 - Each notebook builds on previous concepts with hands-on exercises
 
 **Real SCM integration**
+
 - Address objects, address groups, and tags
 - Security rules and NAT policies
 - Production-ready API patterns with pan-scm-sdk
 
 **Progressive complexity**
+
 - Start with single-node graphs
 - Build to multi-tool AI agents
 - Master conditional routing and loops
 
 **Cost-aware design**
+
 - Phase 1 notebooks (101-107) use mock data - no API costs
 - Phase 2 notebooks (108-111) optional LLM integration
 - Learn fundamentals before spending on AI
 
 **Production patterns**
+
 - Error handling and validation
 - State management best practices
 - Retry logic and pagination
 
 **Complete documentation**
+
 - Detailed notebook summaries
 - Comprehensive setup guides
 - Real-world SCM examples
@@ -402,26 +415,37 @@ make help                  # Show all available commands
 
 ## 📚 Notebooks
 
-### Foundation Notebooks (Phase 1 - No API Key Required)
+### Express Workshop Notebooks (7 notebooks, ~3-4 hours)
 
-| # | Notebook | Duration | Difficulty | Topics |
-|---|----------|----------|------------|--------|
-| **101** | [Type Annotations](notebooks/101_type_annotations.ipynb) | ~5 min | Beginner | TypedDict, Union, Optional, Lambda |
-| **102** | [Core Concepts](notebooks/102_core_concepts.ipynb) | ~30 min | Beginner | State, Nodes, Graphs, Edges |
-| **103** | [Your First Graph](notebooks/103_your_first_graph.ipynb) | ~20 min | Beginner | Building single-node graphs |
-| **104** | [State Management](notebooks/104_state_management.ipynb) | ~20 min | Beginner | Complex multi-field states |
-| **105** | [Sequential Workflows](notebooks/105_sequential_workflows.ipynb) | ~30 min | Intermediate | Multi-node pipelines |
-| **106** | [Conditional Routing](notebooks/106_conditional_routing.ipynb) | ~20 min | Intermediate | Branching logic, decision trees |
-| **107** | [Looping Workflows](notebooks/107_looping_workflows.ipynb) | ~25 min | Intermediate | Retry logic, pagination |
+**Phase 1 - Foundations (No API Key Required)**
 
-### LLM Integration Notebooks (Phase 2 - API Key Required)
+| # | Notebook | Duration | Format | Topics |
+|---|----------|----------|--------|--------|
+| **101** | [Type Annotations](notebooks/101_type_annotations.ipynb) | ~10-15 min | Demo | TypedDict essentials for LangGraph |
+| **102** | [Core Concepts](notebooks/102_core_concepts.ipynb) | ~25 min | Hands-on | State, Nodes, Graphs, Edges (streamlined) |
+| **103** | [Your First Graph](notebooks/103_your_first_graph.ipynb) | ~15 min | Demo | Building single-node graphs |
+| **104** | [State Management](notebooks/104_state_management.ipynb) | ~25 min | Hands-on | Complex multi-field states (streamlined) |
+| **106** | [Conditional Routing](notebooks/106_conditional_routing.ipynb) | ~30-35 min | Hands-on | Conditional routing patterns |
 
-| # | Notebook | Duration | Difficulty | Topics |
-|---|----------|----------|------------|--------|
-| **108** | [First LLM Integration](notebooks/108_first_llm_integration.ipynb) | ~30 min | Intermediate | Claude integration, simple bots |
-| **109** | [Conversational Memory](notebooks/109_conversational_memory.ipynb) | ~45 min | Intermediate | Message history, state management |
-| **110** | [ReAct Agents with Tools](notebooks/110_react_agents_with_tools.ipynb) | ~60 min | Advanced | Tools, reducers, reasoning-acting loop |
-| **111** | [Human-in-the-Loop](notebooks/111_human_in_the_loop.ipynb) | ~45 min | Advanced | Interactive collaboration, approval workflows |
+**Phase 2 - LLM Integration (API Key Required)**
+
+| # | Notebook | Duration | Format | Topics |
+|---|----------|----------|--------|--------|
+| **108** | [First LLM Integration](notebooks/108_first_llm_integration.ipynb) | ~20-25 min | Demo | Claude integration, simple bots |
+| **110** | [ReAct Agents with Tools](notebooks/110_react_agents_with_tools.ipynb) | ~30-35 min | Demo | Tools, reducers, ReAct pattern (capstone) |
+
+**Total Workshop Time**: ~155-180 minutes + breaks = **3.1-3.5 hours**
+
+### Self-Study Notebooks (4 notebooks, for mastery)
+
+| # | Notebook | Duration | Level | Topics |
+|---|----------|----------|-------|--------|
+| **105** | [Sequential Workflows](notebooks/105_sequential_workflows.ipynb) | ~35 min | Extended | Multi-node pipelines (deep-dive) |
+| **107** | [Looping Workflows](notebooks/107_looping_workflows.ipynb) | ~25 min | Advanced | Retry logic, pagination |
+| **109** | [Conversational Memory](notebooks/109_conversational_memory.ipynb) | ~25 min | Extended | Message history (concepts in 110) |
+| **111** | [Human-in-the-Loop](notebooks/111_human_in_the_loop.ipynb) | ~20 min | Advanced | Interactive collaboration patterns |
+
+**Self-Study Path**: Additional ~2-3 hours for comprehensive mastery
 
 ### Detailed Notebook Descriptions
 
@@ -560,12 +584,15 @@ make help                  # Show all available commands
 - Router functions decide path without modifying state
 - Lambda passthrough pattern for router nodes
 - Path maps connect edge names to destination nodes
+- Sequential patterns assumed from notebook 102
 
 **Hands-On:**
 
 - Build configuration change router (3-way routing)
 - Implement environment-based routing (dev/stage/prod)
 - Create address type validator with 3 validation paths
+
+**Note**: This notebook focuses exclusively on conditional routing. Sequential workflow patterns are assumed knowledge from notebook 102.
 
 </details>
 
@@ -696,64 +723,68 @@ make help                  # Show all available commands
 
 ---
 
-## 🏗️ Workshop Phases
+## 🏗️ Workshop Structure
 
-This workshop is designed to be completed in approximately **4 hours** of instructor-led training, with additional time available for self-paced exploration and exercises.
+### Express Workshop (3-4 Hours)
 
-### Phase 1: Foundations (Notebooks 101-107)
+**Format**: Instructor-led with 70/30 demo-focused delivery
+**Target**: Survey/exposure to core concepts with hands-on for critical patterns
 
-**API Key Required:** No
-**Focus:** Core LangGraph patterns without LLM integration
+#### Session 1: Foundations (0:00-1:30, ~90 min)
 
-**What You'll Learn:**
+**Notebooks**: 101-104 (No API Key Required)
 
-- Type-safe state management with TypedDict
-- Building and connecting nodes in graphs
-- Sequential, conditional, and looping workflows
-- Real SCM automation patterns for address objects and security rules
+- **101** (10-15 min): TypedDict essentials - Demo
+- **102** (25 min): State, Nodes, Edges - Hands-on
+- **103** (15 min): First graph - Demo
+- **104** (25 min): Complex state - Hands-on
+- Buffer: 10-15 min
 
-**Why Start Here:**
+**What You'll Learn**: Type-safe state management, building nodes and graphs
 
-- Build strong foundations in LangGraph concepts
-- No API costs while learning fundamentals
-- Immediate hands-on practice with network automation
-- Confidence building before adding AI complexity
+#### Break (1:30-1:45, 15 min)
 
-**Completion Checklist:**
+#### Session 2: Routing (1:45-3:00, ~75 min)
 
-- [ ] Notebook 101: Master TypedDict, Union, Optional
-- [ ] Notebook 102: Understand State, Nodes, Edges, Graphs
-- [ ] Notebook 103: Build single-node validation workflow
-- [ ] Notebook 104: Handle complex multi-field states
-- [ ] Notebook 105: Build multi-node pipelines
-- [ ] Notebook 106: Implement branching logic
-- [ ] Notebook 107: Build retry and pagination patterns
+**Notebooks**: 106 (No API Key Required)
 
-### Phase 2: LLM Integration (Notebooks 108-111)
+- **106** (30-35 min): Conditional routing - Hands-on
+- Buffer: 15 min
 
-**API Key Required:** Yes (Anthropic)
-**Focus:** Adding AI capabilities to your workflows
+**What You'll Learn**: Conditional routing patterns (sequential patterns assumed from 102)
 
-**What You'll Learn:**
+#### Break (3:00-3:15, 15 min)
 
-- Integrating Claude AI into LangGraph applications
-- Managing conversation memory and context
-- Building ReAct agents that use tools intelligently
-- Implementing human-in-the-loop collaboration patterns
+*Setup API keys for Phase 2*
 
-**Why Continue Here:**
+#### Session 3: AI Integration (3:15-4:30, ~75 min)
 
-- Transform workflows into intelligent AI agents
-- Build conversational interfaces for network automation
-- Create tools that Claude can use to interact with SCM
-- Master production-ready patterns for AI-powered automation
+**Notebooks**: 108, 110 (API Key Required)
 
-**Completion Checklist:**
+- **108** (20-25 min): LLM integration - Demo
+- **110** (30-35 min): ReAct agents - Demo (capstone)
+- Buffer/Q&A: 15-20 min
 
-- [ ] Notebook 108: Build simple bot, discover memory problem
-- [ ] Notebook 109: Implement manual history management
-- [ ] Notebook 110: Master tools, reducers, ReAct pattern
-- [ ] Notebook 111: Build interactive collaboration workflows
+**What You'll Learn**: Claude AI integration, ReAct pattern with tools, reducers
+
+**Express Workshop Checklist:**
+
+- [ ] 101: TypedDict essentials
+- [ ] 102: Core concepts (State, Nodes, Graphs, Edges) - streamlined
+- [ ] 103: First single-node graph
+- [ ] 104: Complex multi-field states - streamlined
+- [ ] 106: Conditional routing patterns
+- [ ] 108: First LLM integration
+- [ ] 110: ReAct agents with tools
+
+### Self-Study Path (Additional 2-3 Hours)
+
+**For comprehensive mastery**, complete independently:
+
+- [ ] **105** (35 min): Sequential workflows deep-dive
+- [ ] **107** (25 min): Looping workflows (advanced)
+- [ ] **109** (25 min): Conversational memory (extended)
+- [ ] **111** (20 min): Human-in-the-loop (advanced)
 
 ---
 
@@ -909,24 +940,22 @@ Email: [calvin@cdot.io](mailto:calvin@cdot.io)
 
 ## 📋 Workshop Completion Checklist
 
-Track your progress through the complete workshop:
+### Express Workshop (3.1-3.5 Hours) ✓
 
-### Phase 1: Foundations ✓
+- [ ] 101: Type Annotations - TypedDict essentials
+- [ ] 102: Core Concepts - State, Nodes, Edges, Graphs (streamlined)
+- [ ] 103: Your First Graph - Single-node workflow
+- [ ] 104: State Management - Complex multi-field states (streamlined)
+- [ ] 106: Conditional Routing - Decision-making workflows
+- [ ] 108: First LLM - Claude integration demo
+- [ ] 110: ReAct Agents - Tools, reducers, capstone
 
-- [ ] 101: Type Annotations - Master TypedDict, Union, Optional
-- [ ] 102: Core Concepts - Understand State, Nodes, Edges, Graphs
-- [ ] 103: Your First Graph - Build single-node validation workflow
-- [ ] 104: State Management - Handle complex multi-field states
-- [ ] 105: Sequential Workflows - Build multi-node pipelines
-- [ ] 106: Conditional Routing - Implement branching logic
-- [ ] 107: Looping Workflows - Build retry and pagination patterns
+### Self-Study Path (Additional 2-3 Hours) ✓
 
-### Phase 2: LLM Integration ✓
-
-- [ ] 108: First LLM Integration - Build simple bot, discover memory problem
-- [ ] 109: Conversational Memory - Implement manual history management
-- [ ] 110: ReAct Agents - Master tools, reducers, reasoning-acting pattern
-- [ ] 111: Human-in-the-Loop - Build interactive collaboration workflows
+- [ ] 105: Sequential Workflows - Deep-dive multi-node pipelines
+- [ ] 107: Looping Workflows - Retry logic and pagination
+- [ ] 109: Conversational Memory - Message history management
+- [ ] 111: Human-in-the-Loop - Interactive collaboration
 
 ### Capstone Project Ideas
 

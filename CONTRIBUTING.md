@@ -8,8 +8,8 @@ Thank you for your interest in improving the workshop! 🎉
 
 Found a bug or error in a notebook?
 
-1. Check [existing issues](https://github.com/cdot65/langgraph-workshop-notebooks/issues)
-2. If not found, [create a new issue](https://github.com/cdot65/langgraph-workshop-notebooks/issues/new)
+1. Check [existing issues](https://github.com/cdot65/naf-ai-agents-workshop/issues)
+2. If not found, [create a new issue](https://github.com/cdot65/naf-ai-agents-workshop/issues/new)
 3. Include:
    - Notebook name and cell number
    - Expected vs actual behavior
@@ -20,7 +20,7 @@ Found a bug or error in a notebook?
 
 Have ideas for better examples or explanations?
 
-1. Open a [discussion](https://github.com/cdot65/langgraph-workshop-notebooks/discussions)
+1. Open a [discussion](https://github.com/cdot65/naf-ai-agents-workshop/discussions)
 2. Describe the improvement
 3. Explain the learning benefit
 
@@ -73,7 +73,7 @@ Have ideas for better examples or explanations?
    ```
 
 7. **Create Pull Request**:
-   - Visit: <https://github.com/cdot65/langgraph-workshop-notebooks\>
+   - Visit: <https://github.com/cdot65/naf-ai-agents-workshop\>
    - Click "New Pull Request"
    - Select your branch
    - Describe changes
@@ -190,11 +190,11 @@ Contributors are recognized in:
 
 ```bash
 # Clone your fork
-git clone https://github.com/YOUR_USERNAME/langgraph-workshop-notebooks.git
-cd langgraph-workshop-notebooks
+git clone https://github.com/YOUR_USERNAME/naf-ai-agents-workshop.git
+cd naf-ai-agents-workshop
 
 # Add upstream remote
-git remote add upstream https://github.com/cdot65/langgraph-workshop-notebooks.git
+git remote add upstream https://github.com/cdot65/naf-ai-agents-workshop.git
 
 # Setup environment
 make setup
@@ -235,8 +235,8 @@ git push origin main
 
 ## Questions?
 
-- **General questions**: [Discussions](https://github.com/cdot65/langgraph-workshop-notebooks/discussions)
-- **Bug reports**: [Issues](https://github.com/cdot65/langgraph-workshop-notebooks/issues)
+- **General questions**: [Discussions](https://github.com/cdot65/naf-ai-agents-workshop/discussions)
+- **Bug reports**: [Issues](https://github.com/cdot65/naf-ai-agents-workshop/issues)
 - **Security issues**: Email <calvin@cdot.io> directly
 
 ## License

@@ -29,7 +29,7 @@ This guide walks you through the entire process of creating a high-quality educa
 
 3. **Save immediately**:
    - Click "File" → "Save As"
-   - Navigate to: `/Users/cdot/development/cdot65/langgraph-workshop-notebooks/notebooks/`
+   - Navigate to: `/Users/cdot/development/cdot65/naf-ai-agents-workshop/notebooks/`
    - Name it: `05_your_topic.ipynb` (use appropriate number and topic)
    - Click "Save"
 
@@ -634,7 +634,7 @@ With the skills from this notebook, you can:
 
 - [LangGraph Official Docs](https://langchain-ai.github.io/langgraph/)
 - [Anthropic Claude Docs](https://docs.anthropic.com/)
-- [Project GitHub Repository](https://github.com/cdot65/langgraph-workshop-notebooks)
+- [Project GitHub Repository](https://github.com/cdot65/naf-ai-agents-workshop)
 
 ---
 

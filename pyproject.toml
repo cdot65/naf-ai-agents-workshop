@@ -1,5 +1,5 @@
 [project]
-name = "langgraph-workshop-notebooks"
+name = "naf-ai-agents-workshop"
 version = "1.0.0"
 description = "LangGraph workshop notebooks - Learn state management, ReAct agents, and production patterns"
 readme = "README.md"

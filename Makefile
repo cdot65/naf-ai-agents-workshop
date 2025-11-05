@@ -1,4 +1,4 @@
-.PHONY: help test-all clean setup test-phase1 test-phase2 jupyter dev lint format studio studio-install studio-check workflow-01 workflow-02 workflow-03 workflow-04 workflow-05
+.PHONY: help test-all clean setup test-phase1 test-phase2 test-workshop test-self-study jupyter dev lint format studio studio-install studio-check workflow-01 workflow-02 workflow-03 workflow-04 workflow-05
 
 # Load environment variables from .env
 ifneq (,$(wildcard .env))
@@ -30,22 +30,26 @@ ALL_NOTEBOOKS = $(PHASE1_NOTEBOOKS) $(PHASE2_NOTEBOOKS)
 help:
 	@echo "🤖 LangGraph Workshop - Building AI Agents for Network Automation"
 	@echo ""
-	@echo "📚 Phase 1: Foundations (No API Key Required - Duration: 8-10 hours):"
-	@echo "  make test-101                101: Type Annotations (~5 min)"
-	@echo "  make test-102                102: Core Concepts (~30 min)"
-	@echo "  make test-103                103: Your First Graph (~20 min)"
-	@echo "  make test-104                104: State Management (~20 min)"
-	@echo "  make test-105                105: Sequential Workflows (~30 min)"
-	@echo "  make test-106                106: Conditional Routing (~20 min)"
-	@echo "  make test-107                107: Looping Workflows (~25 min)"
-	@echo "  make test-phase1             Run all Phase 1 notebooks"
+	@echo "⚡ Express Workshop (3-4 hours, 7 notebooks):"
+	@echo "  make test-workshop           Run all 7 workshop notebooks (101-106, 108, 110)"
+	@echo "  make test-self-study         Run 4 self-study notebooks (105, 107, 109, 111)"
 	@echo ""
-	@echo "🧠 Phase 2: LLM Integration (API Key Required - Duration: 6-8 hours):"
-	@echo "  make test-108                108: First LLM Integration (~30 min)"
-	@echo "  make test-109                109: Conversational Memory (~45 min)"
-	@echo "  make test-110                110: ReAct Agents with Tools (~60 min)"
-	@echo "  make test-111                111: Human-in-the-Loop (~45 min)"
-	@echo "  make test-phase2             Run all Phase 2 notebooks"
+	@echo "📚 Phase 1: Foundations (No API Key Required):"
+	@echo "  make test-101                101: Type Annotations (~10-15 min)"
+	@echo "  make test-102                102: Core Concepts (~25 min)"
+	@echo "  make test-103                103: Your First Graph (~15 min)"
+	@echo "  make test-104                104: State Management (~25 min)"
+	@echo "  make test-105                105: Sequential Workflows (~35 min, self-study)"
+	@echo "  make test-106                106: Sequential + Conditional (~35-40 min)"
+	@echo "  make test-107                107: Looping Workflows (~25 min, self-study)"
+	@echo "  make test-phase1             Run all Phase 1 notebooks (101-107)"
+	@echo ""
+	@echo "🧠 Phase 2: LLM Integration (API Key Required):"
+	@echo "  make test-108                108: First LLM Integration (~20-25 min)"
+	@echo "  make test-109                109: Conversational Memory (~25 min, self-study)"
+	@echo "  make test-110                110: ReAct Agents (~30-35 min)"
+	@echo "  make test-111                111: Human-in-the-Loop (~20 min, self-study)"
+	@echo "  make test-phase2             Run all Phase 2 notebooks (108-111)"
 	@echo ""
 	@echo "🛠️  Development & Utilities:"
 	@echo "  make setup                   Install dependencies and configure environment"
@@ -174,6 +178,21 @@ test-phase2: test-108 test-109 test-110 test-111
 	@echo "🎉 Phase 2 Complete: All LLM integration notebooks executed successfully!"
 	@echo "🧠 You've mastered: Claude integration, conversational memory, ReAct agents, HITL patterns"
 	@echo "🏆 Workshop Complete! You're ready to build production AI agents for network automation"
+
+# Express Workshop targets (7 notebooks)
+test-workshop: test-101 test-102 test-103 test-104 test-106 test-108 test-110
+	@echo ""
+	@echo "🎉 Express Workshop Complete: All 7 workshop notebooks executed successfully!"
+	@echo "📚 You've mastered: TypedDict, State/Nodes/Edges, Routing, ReAct agents"
+	@echo "🚀 Next steps: Self-study notebooks (105, 107, 109, 111) for comprehensive mastery"
+	@echo "💡 Run: make test-self-study"
+
+# Self-study targets (4 notebooks)
+test-self-study: test-105 test-107 test-109 test-111
+	@echo ""
+	@echo "🎉 Self-Study Complete: All 4 additional notebooks executed successfully!"
+	@echo "🧠 You've completed: Sequential deep-dive, Looping, Memory, HITL patterns"
+	@echo "🏆 Full workshop mastery achieved! Ready for production AI agents"
 
 # Run all notebooks
 test-all: test-phase1 test-phase2

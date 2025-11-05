@@ -1,236 +1,288 @@
-# Workshop Plan: LangGraph for Network Automation
+# Workshop Plan: LangGraph for Network Automation - Express Format
 
-**Duration:** 4 hours (fast paced)
-**Format:** Instructor-led with demos, hands-on for key concepts, full materials for post-workshop self-study
+**Duration:** 3-4 hours
+**Format:** Instructor-led with 70/30 demo-focused delivery
 **Target:** Network security engineers, Python basics assumed
+**Notebooks:** 7 workshop notebooks (101-106, 108, 110) + 4 self-study (105, 107, 109, 111)
 
 ---
 
 ## Overview
 
-Fast-paced introduction to building AI agents for network automation using LangGraph and Palo Alto Networks SCM. Core concepts covered in session; attendees continue with complete notebook series afterward.
+Express introduction to building AI agents for network automation using LangGraph and Palo Alto Networks SCM. Core concepts demonstrated in workshop; attendees complete full series afterward for mastery.
 
-**Phase 1:** LangGraph foundations (no API key)
-**Phase 2:** LLM integration with Claude AI
-**Post-workshop:** Full 11-notebook series for self-study
+**Approach:** Survey/exposure to patterns → comprehensive self-study
+**Session 1:** LangGraph foundations (no API key, hands-on)
+**Session 2:** Routing patterns (no API key, hands-on)
+**Session 3:** LLM integration with Claude AI (demo-focused capstone)
+
+**Total Time:** ~3-3.5 hours (160-190 min + breaks)
 
 ---
 
 ## Workshop Flow & Timing
 
-### Session 1: Foundations (0:00-2:00, 120 min)
+### Session 1: Foundations (0:00-1:30, ~90 min)
 
-**0:00-0:15 (15 min) - Welcome & Setup**
+**0:00-0:10 (10 min) - Welcome & Setup**
 
 - Workshop overview and objectives
-- **Codespaces users:** Open Codespace (ready in 2 min)
+- **Codespaces users:** Verify Codespace access
 - **Local users:** Verify Python/Jupyter installations
-- Quick environment check (Jupyter Lab access)
-- Set expectations: fast pace, materials for later
-- Note: Codespaces significantly reduces setup time
+- Set expectations: demo-focused, materials for mastery later
+- Note: Express format prioritizes breadth over depth
 
-**0:15-0:35 (20 min) - Type Annotations & State (NB 101-102)**
+**0:10-0:25 (15 min) - Type Annotations (NB 101)**
 
-- **Topics:** TypedDict, state schemas, graph basics
-- **Activity:** Live code demo with SCM address objects
-- **Key concept:** State is everything in LangGraph
-- **Hands-on:** Quick lab - define state schema
+- **Format:** Instructor demo (70/30)
+- **Topics:** TypedDict essentials for LangGraph state
+- **Activity:** Live code demo with address object schema
+- **Key concept:** TypedDict defines state structure
+- **Student follow-along:** Run cells, observe
 
-**0:35-0:55 (20 min) - Building Graphs (NB 103-104)**
+**0:25-0:50 (25 min) - Core Concepts (NB 102)**
 
-- **Topics:** Nodes, edges, compilation, execution
-- **Activity:** Build first graph together (address validation)
-- **Key concept:** Nodes are functions, edges control flow
-- **Hands-on:** Create and run simple graph
+- **Format:** Hands-on (students code)
+- **Topics:** State, Nodes, Edges, Graphs
+- **Activity:** Build address validation workflow together
+- **Key concept:** State flows through node functions
+- **Hands-on:** Create 2-node graph, run it
 
-**0:55-1:20 (25 min) - Sequential & Conditional (NB 105-106)**
+**0:50-1:05 (15 min) - Your First Graph (NB 103)**
 
-- **Topics:** Multi-node pipelines, conditional routing
-- **Activity:** Demo tag→address→group workflow
-- **Activity:** Demo folder-based routing (prod/dev)
-- **Key concept:** add_edge() vs add_conditional_edges()
-- **Hands-on:** Add conditional logic to existing graph
+- **Format:** Instructor demo (70/30)
+- **Topics:** Single-node pattern, compile, invoke
+- **Activity:** Demo START→node→END pattern
+- **Key concept:** Graph compilation creates executable app
+- **Student follow-along:** Run cells, visualize graph
 
-**1:20-1:50 (30 min) - Looping & Patterns (NB 107)**
+**1:05-1:30 (25 min) - State Management (NB 104)**
 
-- **Topics:** Self-referencing edges, retry logic, pagination
-- **Activity:** Build HA polling workflow
-- **Activity:** API pagination pattern
-- **Key concept:** Loop counters prevent infinite loops
-- **Hands-on:** Implement retry logic
-- **Phase 1 wrap:** Attendees can build production workflows without AI
+- **Format:** Hands-on (students code)
+- **Topics:** Complex multi-field states
+- **Activity:** Build state with lists, dicts, optional fields
+- **Key concept:** State can hold any Python type
+- **Hands-on:** Design SCM workflow state
 
-**1:50-2:00 (10 min) - Phase 1 Q&A**
-
-- Questions on foundations
-- Preview Phase 2
-- Mention: All Phase 1 notebooks available for deep dive
-
-**2:00-2:15 (15 min) - BREAK**
-
-- Obtain Anthropic API keys if needed
-- Configure .env files
-- Stretch, coffee, networking
+**1:30-1:45 (15 min) - BREAK**
 
 ---
 
-### Session 2: LLM Integration (2:15-3:45, 90 min)
+### Session 2: Routing Patterns (1:45-3:00, ~75 min)
 
-**2:15-2:30 (15 min) - First LLM Integration (NB 108)**
+**1:45-2:25 (40 min) - Sequential + Conditional Routing (NB 106)**
 
-- **Topics:** Claude API, ChatAnthropic, messages
-- **Activity:** Build simple PAN-OS query bot
-- **Key concept:** llm.invoke() with HumanMessage
-- **Demo:** Live API calls (~$0.01)
-- **Quick hands-on:** Modify bot prompt
+- **Format:** Hands-on (students code)
+- **Topics:** Sequential basics (from 105) + conditional routing
+- **Part 1 (10 min):** Sequential patterns primer
+  - Quick review: add_edge() for node chaining
+  - Demo: 2-node validation→create pipeline
+- **Part 2 (30 min):** Conditional routing
+  - Router functions with Literal return types
+  - add_conditional_edges() for branching
+  - Demo: folder-based routing (dev/prod)
+  - Hands-on: Build 3-way router
+- **Key concept:** Sequential = fixed path, Conditional = dynamic path
+- **Note:** Full sequential deep-dive in NB 105 (self-study)
 
-**2:30-2:50 (20 min) - Conversational Memory (NB 109)**
+**2:25-2:50 (25 min) - Wrap & Discussion**
 
-- **Topics:** Message history, AIMessage, multi-turn
-- **Activity:** Build troubleshooting bot with context
-- **Key concept:** State holds conversation history
-- **Demo:** Memory in action
-- **Discussion:** When to use memory vs. stateless
+- Recap: State → Nodes → Sequential → Conditional
+- Discussion: Real SCM workflows (tag→address→group)
+- Preview: Phase 2 adds AI to these patterns
+- Note: NB 105 (sequential deep-dive), NB 107 (looping) available for self-study
+- Buffer for questions
 
-**2:50-3:25 (35 min) - ReAct Agents & Tools (NB 110)**
+**2:50-3:00 (10 min) - Mini Break**
 
-- **Topics:** add_messages reducer, StructuredTool, tool calling
-- **Activity:** Build agent with SCM CRUD operations
-- **Key concept:** LLM decides when to call tools
-- **Demo:** Agent reasoning through address creation
-- **Hands-on (time permitting):** Add custom tool
+- Stretch, obtain Anthropic API keys
+- Configure .env files if participating in Phase 2
+- Optional: Observe only if no API key
+
+**3:00-3:15 (15 min) - BREAK**
+
+---
+
+### Session 3: AI Integration (3:15-4:30, ~75 min)
+
+**3:15-3:40 (25 min) - First LLM Integration (NB 108)**
+
+- **Format:** Instructor demo (90/10)
+- **Topics:** Claude API, HumanMessage, simple bot
+- **Activity:** Build PAN-OS query bot
+- **Key concept:** llm.invoke() with messages
+- **Demo:** Live Claude API calls (~$0.01)
+- **Discussion:** Stateless bot limitations (no memory)
+- **Student observe:** Follow along, run cells if API key available
+- **Note:** Full memory patterns in NB 109 (self-study)
+
+**3:40-4:15 (35 min) - ReAct Agents with Tools (NB 110)**
+
+- **Format:** Instructor demo (90/10) - Capstone
+- **Topics:** add_messages reducer, tools, ReAct pattern
+- **Part 1 (10 min):** Reducers explained
+  - What is add_messages?
+  - Why it eliminates manual state management
+  - Compare to NB 109 manual approach (self-study)
+- **Part 2 (25 min):** ReAct pattern demonstration
+  - Create SCM tools (fetch, create, list, group)
+  - Build agent that calls tools
+  - Demo: Multi-step autonomous workflow
+  - Reasoning → Acting loop visualization
+- **Key concept:** Agent decides which tools to call, when to stop
+- **Demo:** "Create 4 servers and group them" → agent autonomously chains 5 tool calls
 - **Discussion:** Tool design best practices
+- **Note:** NB 111 (human-in-loop) for production patterns (self-study)
 
-**3:25-3:40 (15 min) - Human-in-the-Loop (NB 111)**
+**4:15-4:25 (10 min) - Workshop Wrap-Up**
 
-- **Topics:** Approval workflows, interrupt patterns
-- **Activity:** Demo NAT policy drafting with approval
-- **Key concept:** Differential routing (tools vs. human)
-- **Demo:** Interactive workflow
-- **Discussion:** Production deployment patterns
+- Recap: From TypedDict → Core Concepts → Routing → AI Agents
+- What you can build now: Intelligent SCM automation
+- Next steps: Self-study path (NB 105, 107, 109, 111)
+- Resources: All 11 notebooks available for mastery
 
-**3:40-3:45 (5 min) - Phase 2 Wrap**
-
-- Recap: From simple bot to production agent
-- All notebooks available for exploration
-
----
-
-### Wrap-Up (3:45-4:00, 15 min)
-
-**3:45-3:55 (10 min) - Next Steps & Resources**
-
-- **What you learned:** Core LangGraph patterns, AI integration
-- **Continue learning:** 11 notebooks for deep study
-- **Keep using Codespaces:** Your fork remains available for continued learning
-- **Resources:**
-  - `/summaries` - Quick references
-  - `/docs/examples` - Production code
-  - `.devcontainer` - Codespaces configuration for your projects
-- **Capstone ideas:** Build your own SCM automation agent
-- **Community:** GitHub issues/discussions
-
-**3:55-4:00 (5 min) - Final Q&A**
+**4:25-4:30 (5 min) - Final Q&A**
 
 - Open questions
 - Workshop feedback
-- Instructor contact for follow-up
+- Instructor contact
 
 ---
 
 ## Break Schedule
 
-**Scheduled:** 2:00-2:15 (15 min) between Phase 1 and Phase 2
-**Flexible:** Instructor may add 5-min micro-breaks as needed based on pace
+| Time | Duration | Purpose |
+|------|----------|---------|
+| 1:30-1:45 | 15 min | Mid-workshop break |
+| 2:50-3:00 | 10 min | Mini break, API key setup |
+| 3:00-3:15 | 15 min | Pre-Phase 2 break |
+
+**Total breaks:** 40 minutes
+**Total instruction:** 190 minutes
+**Workshop end:** ~4:30 (including buffers and Q&A)
+
+---
+
+## Notebook Coverage
+
+### Workshop Notebooks (7 total)
+
+| NB | Topic | Duration | Format | Key Takeaway |
+|----|-------|----------|--------|--------------|
+| **101** | Type Annotations | 10-15 min | Demo | TypedDict for state schemas |
+| **102** | Core Concepts | 25 min | Hands-on | State, Nodes, Edges, Graphs |
+| **103** | First Graph | 15 min | Demo | START→node→END pattern |
+| **104** | State Management | 25 min | Hands-on | Complex multi-field states |
+| **106** | Sequential + Conditional | 35-40 min | Hands-on | Routing patterns |
+| **108** | First LLM | 20-25 min | Demo | Claude integration |
+| **110** | ReAct Agents | 30-35 min | Demo | Tools + reducers capstone |
+
+**Total:** 160-190 minutes
+
+### Self-Study Notebooks (4 total)
+
+| NB | Topic | Duration | Level | When to Study |
+|----|-------|----------|-------|---------------|
+| **105** | Sequential Workflows | ~35 min | Extended | After 106 for deep-dive |
+| **107** | Looping Workflows | ~25 min | Advanced | After 106 for retry patterns |
+| **109** | Conversational Memory | ~25 min | Extended | After 110 for memory deep-dive |
+| **111** | Human-in-Loop | ~20 min | Advanced | After 110 for production patterns |
+
+**Self-study adds:** ~2-3 hours for comprehensive mastery
 
 ---
 
 ## Activities Summary
 
-### Hands-On Labs (Attendees Code)
+### Hands-On Labs (Students Code)
 
-1. Define state schema (NB 101-102)
-2. Build first graph (NB 103-104)
-3. Add conditional routing (NB 106)
-4. Implement retry logic (NB 107)
-5. Modify bot prompt (NB 108)
-6. Add custom tool (NB 110, time permitting)
+1. **Define state schema** (NB 102) - 5 min
+2. **Build 2-node graph** (NB 102) - 10 min
+3. **Design complex state** (NB 104) - 10 min
+4. **Build sequential pipeline** (NB 106) - 5 min
+5. **Implement conditional router** (NB 106) - 15 min
 
-### Instructor Demos (Attendees Observe)
+**Total hands-on:** ~45 minutes (30%)
 
-1. Address validation workflow (NB 103)
-2. Tag→address→group pipeline (NB 105)
-3. Folder routing (NB 106)
-4. HA polling (NB 107)
-5. PAN-OS query bot (NB 108)
-6. Memory troubleshooting bot (NB 109)
-7. ReAct agent reasoning (NB 110)
-8. NAT policy approval workflow (NB 111)
+### Instructor Demos (Students Observe)
 
-### Discussions
+1. **TypedDict essentials** (NB 101) - 10 min
+2. **Address validation workflow** (NB 103) - 10 min
+3. **Sequential patterns primer** (NB 106) - 10 min
+4. **Claude API integration** (NB 108) - 20 min
+5. **ReAct agent with tools** (NB 110) - 30 min
 
-1. Phase 1 wrap - production workflows
-2. When to use memory
-3. Tool design best practices
-4. Production deployment patterns
+**Total demos:** ~80 minutes (50%)
+
+### Discussions & Wrap-Ups
+
+- Phase 1 wrap-up - 25 min
+- Workshop conclusion - 15 min
+
+**Total discussion:** ~40 minutes (20%)
 
 ---
 
 ## Key Topics Covered
 
-### Phase 1: Foundations
+### Phase 1: Foundations (No API Key)
 
-- Python type annotations (TypedDict, Union, Optional)
-- LangGraph architecture (state, nodes, edges, graphs)
-- State management and schemas
-- Sequential workflows (add_edge)
-- Conditional routing (add_conditional_edges)
-- Looping patterns (self-referencing edges)
-- Production patterns (error handling, retries, pagination)
+**Covered in Workshop:**
+- TypedDict basics for state schemas
+- State, Nodes, Edges, Graphs
+- Single-node and multi-field patterns
+- Sequential workflow basics (primer)
+- Conditional routing with router functions
+- Graph compilation and execution
 
-### Phase 2: LLM Integration
+**Available for Self-Study:**
+- Sequential workflows deep-dive (NB 105)
+- Looping and retry patterns (NB 107)
+- Union/Optional/Lambda types (NB 101 full version)
 
-- Claude API integration (ChatAnthropic)
-- Message types (HumanMessage, AIMessage)
-- Conversational memory management
+### Phase 2: LLM Integration (API Key)
+
+**Covered in Workshop:**
+- Claude API integration basics
+- HumanMessage and simple bots
 - add_messages reducer pattern
 - StructuredTool creation
 - ReAct agent architecture
-- Tool calling and reasoning
-- Human-in-the-loop workflows
-- Interactive approval patterns
+- Autonomous multi-step workflows
 
-### Cross-Cutting
+**Available for Self-Study:**
+- Conversational memory management (NB 109)
+- Human-in-the-loop workflows (NB 111)
+- Advanced tool patterns
+- Production deployment patterns
 
-- Palo Alto Networks SCM objects (addresses, rules, NAT policies, tags, groups)
-- pan-scm-sdk patterns
-- Error handling and validation
-- Testing and debugging workflows
-- Cost management for LLMs
-- Observability (LangSmith optional)
+### Cross-Cutting (All Notebooks)
+
+- Palo Alto Networks SCM objects (addresses, groups, rules, tags)
+- pan-scm-sdk API patterns
+- Error handling basics
+- Graph visualization
+- State flow understanding
 
 ---
 
 ## Materials Provided
 
 **Pre-workshop:**
-
 - Repository URL for forking
-- GitHub Codespaces configuration (.devcontainer)
-- .env.template
-- WORKSHOP_FAQ.md with setup instructions
+- GitHub Codespaces configuration
+- .env.template for API keys
+- WORKSHOP_FAQ.md with setup
 
 **During workshop:**
-
 - Pre-configured cloud environment (Codespaces)
-- Live coding examples
-- Instructor solutions
+- Live coding demonstrations
+- Instructor-led walkthroughs
 - Real-time Q&A
 
 **Post-workshop:**
-
 - Complete 11-notebook series
-- Markdown summaries (/summaries)
+- Self-study path guidance
 - Production examples (/docs/examples)
 - Reusable code patterns (/src)
 
@@ -238,34 +290,28 @@ Fast-paced introduction to building AI agents for network automation using LangG
 
 ## Prerequisites
 
-**Required (All attendees):**
-
+**Required (All Attendees):**
 - GitHub account (free)
 - Stable internet connection
 - Web browser
 
-**Setup Option A - Codespaces (Recommended):**
-
-- Just GitHub account + browser
+**Setup - Codespaces (Recommended):**
+- GitHub account + browser only
 - Zero local installation
 - Works on any device
-- Free tier: 60 hours/month
+- Free tier: 60 hours/month (workshop uses ~4 hours)
 
-**Setup Option B - Local (Optional):**
-
+**Setup - Local (Optional):**
 - Python 3.11+
-- Laptop with terminal access
-- Text editor/IDE
+- Jupyter Lab
 - Git installed
 
-**For Phase 2 (during workshop):**
-
-- Anthropic API key (~$1 cost)
-- Or observe instructor demos
+**For Phase 2 (Optional):**
+- Anthropic API key (~$0.50 cost for workshop)
+- Or observe instructor demos without running cells
 
 **Knowledge:**
-
-- Basic Python (functions, dicts)
+- Basic Python (functions, dictionaries)
 - Network security concepts
 - NO prior LangGraph/AI experience needed
 
@@ -275,30 +321,114 @@ Fast-paced introduction to building AI agents for network automation using LangG
 
 **By end of workshop, attendees can:**
 
-1. Build LangGraph state machines for automation
-2. Design sequential and conditional workflows
-3. Implement looping/retry patterns
-4. Integrate Claude AI into graphs
-5. Create tools for agent use
-6. Understand production deployment patterns
-7. Continue learning with full notebook series
+1. ✅ Understand LangGraph core architecture (State, Nodes, Edges, Graphs)
+2. ✅ Build simple sequential and conditional workflows
+3. ✅ Design complex state schemas with TypedDict
+4. ✅ Understand Claude AI integration basics
+5. ✅ Recognize ReAct pattern and tool calling
+6. ✅ Know where to continue learning (self-study notebooks)
 
-**Post-workshop goals:**
+**Post-workshop mastery goals:**
 
-- Complete all 11 notebooks independently
-- Build custom AI automation agents
-- Deploy production workflows
+- Complete all 11 notebooks independently (~10-15 hours)
+- Build custom AI automation agents for SCM
+- Implement production retry/looping patterns
+- Deploy real-world workflows
 
 ---
 
-## Logistics Notes
+## Instructor Notes
 
-**Pace:** Intensive - covers highlights of 14-18 hour curriculum in 4 hours
-**Philosophy:** Foundation in session, mastery through self-study
-**Setup:** GitHub Codespaces recommended for zero-install experience
+### Pacing Guidance
+
+**Session 1 (1:30):**
+- Keep NB 101 brief (~10-12 min) - just TypedDict essentials
+- Ensure NB 102 hands-on completes (~20 min minimum)
+- NB 103 can flex shorter if needed (~10-12 min)
+- NB 104 hands-on is important (~20 min minimum)
+
+**Session 2 (1:15):**
+- NB 106 is the centerpiece - don't rush (~35-40 min)
+- Sequential primer must be clear (~10 min)
+- Conditional routing needs hands-on time (~25 min)
+
+**Session 3 (1:15):**
+- NB 108 can be faster demo (~15-20 min)
+- NB 110 is the capstone - give it time (~30-35 min)
+- Emphasize reducer concept and ReAct loop
+
+### Demo vs Hands-On
+
+**Heavy demo** (90/10): 101, 103, 108, 110
+**Hands-on** (30/70 or 50/50): 102, 104, 106
+
+### Common Questions
+
+**Q:** "Will we cover looping/retry patterns?"
+**A:** "Looping (NB 107) is self-study - foundations are sequential + conditional which you're learning now."
+
+**Q:** "Will we build memory into the agent?"
+**A:** "Memory deep-dive (NB 109) is self-study. NB 110 shows reducers which handle memory automatically."
+
+**Q:** "Can we deploy these to production?"
+**A:** "NB 111 (self-study) covers human-in-loop patterns needed for production. Today you'll see the foundations."
+
+### Technical Notes
+
+- Have Anthropic API key ready for demos
+- Test NB 110 multi-tool workflow before session
+- Keep Codespace running throughout
+- Monitor time - Sessions 1 & 2 tend to run long
+- Build buffer into NB 106 (most complex hands-on)
+
+### Flexibility Points
+
+- If ahead: Expand NB 106 hands-on, add more discussion
+- If behind: Shorten NB 101 to 8 min, NB 103 to 10 min
+- Last resort: Make NB 104 a demo instead of hands-on
+
+---
+
+## Logistics
+
+**Pace:** Intensive - 70/30 demo-focused covering essentials in 3-4 hours
+**Philosophy:** Survey/exposure in session, mastery through self-study
+**Setup:** GitHub Codespaces recommended for zero-install
 **Support:** Instructor available post-workshop via GitHub/email
-**API Costs:** ~$1 for Phase 2 demos (optional for attendees)
+**API Costs:** ~$0.50 for Phase 2 (optional for attendees)
 **Internet:** Required for Codespaces and API calls
-**Codespaces:** Free tier sufficient (60 hrs/month, ~4 hrs used)
-**Recording:** Check with organizers re: recording policy
-**Accessibility:** Codespaces works on any device with browser
+**Recording:** Check with organizers
+
+---
+
+## Self-Study Roadmap
+
+**After Workshop, Complete:**
+
+1. **NB 105** - Sequential Workflows (~35 min)
+   - Comprehensive multi-node pipelines
+   - Tag→Address→Group workflow
+   - Error handling across steps
+
+2. **NB 107** - Looping Workflows (~25 min)
+   - Self-referencing edges
+   - Retry logic with counters
+   - Pagination patterns
+
+3. **NB 109** - Conversational Memory (~25 min)
+   - Manual message history management
+   - Compare to NB 110 reducer approach
+   - Token cost considerations
+
+4. **NB 111** - Human-in-the-Loop (~20 min)
+   - Interactive approval workflows
+   - Production deployment patterns
+   - NAT policy drafting example
+
+**Total Additional Learning:** ~2-3 hours for comprehensive mastery
+
+**Capstone Project Ideas:**
+- Build complete SCM CRUD agent
+- Implement firewall migration assistant
+- Create compliance checking bot
+- Design interactive policy builder

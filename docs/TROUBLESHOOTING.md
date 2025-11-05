@@ -287,10 +287,10 @@ curl -k "https://$PANOS_HOSTNAME/api/?type=keygen&user=$PANOS_USERNAME&password=
 
 ## Still Stuck?
 
-1. **Search GitHub Issues**: <https://github.com/cdot65/langgraph-workshop-notebooks/issues>
-2. **Ask in Discussions**: <https://github.com/cdot65/langgraph-workshop-notebooks/discussions>
+1. **Search GitHub Issues**: <https://github.com/cdot65/naf-ai-agents-workshop/issues>
+2. **Ask in Discussions**: <https://github.com/cdot65/naf-ai-agents-workshop/discussions>
 3. **Check LangGraph Docs**: <https://langchain-ai.github.io/langgraph/>
-4. **Report New Bug**: <https://github.com/cdot65/langgraph-workshop-notebooks/issues/new>
+4. **Report New Bug**: <https://github.com/cdot65/naf-ai-agents-workshop/issues/new>
 
 When asking for help, include:
 

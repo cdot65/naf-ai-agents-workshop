@@ -4,10 +4,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-LangGraph workshop teaching network automation engineers to build AI agents for Palo Alto Networks Strata Cloud Manager using LangGraph and Claude AI. 11 progressive notebooks (101-111) covering state management, workflows, and AI integration.
+LangGraph workshop teaching network automation engineers to build AI agents for Palo Alto Networks Strata Cloud Manager using LangGraph and Claude AI.
+
+**Workshop Format**: Express (3-4 hours) with 7 workshop notebooks + 4 self-study notebooks
+**Workshop Notebooks**: 101-106, 108, 110 (~160-190 min + breaks)
+**Self-Study Notebooks**: 105, 107, 109, 111 (~2-3 hours additional)
 
 **Target audience**: Network security engineers with basic Python knowledge
 **Core tech**: LangGraph 0.2.50+, Claude AI (Anthropic), pan-scm-sdk, Python 3.11+
+**Delivery**: 70/30 demo-focused (instructor demonstrates, students observe/follow-along)
 
 ## CRITICAL: Git Commit Rules
 
@@ -53,10 +58,16 @@ make jupyter            # Launch Jupyter Lab for interactive development
 # Test individual notebooks
 make test-101           # Through make test-111
 
-# Test by phase
+# Test workshop notebooks (Express format - 7 notebooks)
+make test-workshop      # Notebooks 101-106, 108, 110 (workshop subset)
+
+# Test self-study notebooks (4 notebooks)
+make test-self-study    # Notebooks 105, 107, 109, 111
+
+# Test by phase (legacy)
 make test-phase1        # Notebooks 101-107 (no API key)
 make test-phase2        # Notebooks 108-111 (requires ANTHROPIC_API_KEY)
-make test-all           # All notebooks
+make test-all           # All 11 notebooks
 
 # Clean outputs
 make clean              # All notebooks
@@ -90,21 +101,27 @@ make lint               # Flake8 linting
 
 ## Architecture
 
-### Notebook Structure (Progressive Learning)
-- **Phase 1 (101-107)**: LangGraph foundations, no LLM required
-  - 101: TypedDict, Union, Optional
-  - 102: State, Nodes, Edges, Graphs
-  - 103: First single-node graph
-  - 104: Complex state management
-  - 105: Sequential multi-node workflows
-  - 106: Conditional routing
-  - 107: Looping with retry/pagination
+### Notebook Structure (Express Workshop)
 
-- **Phase 2 (108-111)**: LLM integration (requires API key)
-  - 108: First Claude integration
-  - 109: Conversational memory
-  - 110: ReAct agents with tools
-  - 111: Human-in-the-loop patterns
+**Workshop Notebooks (7 total, ~3-4 hours):**
+
+- **Phase 1 (101-106)**: LangGraph foundations, no LLM required
+  - 101: TypedDict essentials (~10-15 min, demo-focused)
+  - 102: State, Nodes, Edges, Graphs (~25 min, hands-on)
+  - 103: First single-node graph (~15 min, demo-focused)
+  - 104: Complex state management (~25 min, hands-on)
+  - 106: Sequential basics + Conditional routing (~35-40 min, hands-on)
+
+- **Phase 2 (108, 110)**: LLM integration (requires API key)
+  - 108: First Claude integration (~20-25 min, demo-focused)
+  - 110: ReAct agents with tools (~30-35 min, demo-focused capstone)
+
+**Self-Study Notebooks (4 total, ~2-3 hours):**
+
+- 105: Sequential workflows deep-dive (~35 min, extended content)
+- 107: Looping with retry/pagination (~25 min, advanced)
+- 109: Conversational memory (~25 min, extended content)
+- 111: Human-in-the-loop patterns (~20 min, advanced)
 
 ### Source Code Structure
 ```
@@ -296,11 +313,16 @@ Optional:
 
 ## Workshop Delivery
 
-4-hour instructor-led format:
-- **Session 1 (0:00-2:00)**: Phase 1 foundations + Q&A
-- **Break (2:00-2:15)**: API key setup
-- **Session 2 (2:15-3:45)**: Phase 2 LLM integration
-- **Wrap-up (3:45-4:00)**: Next steps, resources
+3-4 hour Express format (70/30 demo-focused):
+- **Session 1 (0:00-1:30)**: Foundations (NB 101-104) + hands-on
+- **Break (1:30-1:45)**: Mid-workshop break
+- **Session 2 (1:45-3:00)**: Routing (NB 106) + hands-on
+- **Break (3:00-3:15)**: API key setup
+- **Session 3 (3:15-4:15)**: AI Integration (NB 108, 110) + demos
+- **Wrap-up (4:15-4:30)**: Next steps, self-study path
+
+**Workshop notebooks**: 101-106, 108, 110 (7 total)
+**Self-study notebooks**: 105, 107, 109, 111 (4 total, ~2-3 hours additional)
 
 GitHub Codespaces preferred for zero-install experience.
 

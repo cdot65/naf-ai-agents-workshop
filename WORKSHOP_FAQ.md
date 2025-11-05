@@ -122,7 +122,7 @@ python --version  # Should show 3.11 or higher
 ```bash
 # 1. Fork repo on GitHub, then clone YOUR fork
 git clone <your-fork-url>
-cd langgraph-workshop-notebooks
+cd naf-ai-agents-workshop
 
 # 2. Install dependencies (creates virtual environment)
 make setup

@@ -8,7 +8,7 @@ Complete guide for setting up the LangGraph Workshop environment.
 
 ### Step 1: Create Codespace
 
-1. Visit: <https://github.com/cdot65/langgraph-workshop-notebooks>
+1. Visit: <https://github.com/cdot65/naf-ai-agents-workshop>
 2. Click the green "Code" button
 3. Select "Codespaces" tab
 4. Click "Create codespace on main"
@@ -94,8 +94,8 @@ pip install uv
 ### Step 2: Clone Repository
 
 ```bash
-git clone https://github.com/cdot65/langgraph-workshop-notebooks.git
-cd langgraph-workshop-notebooks
+git clone https://github.com/cdot65/naf-ai-agents-workshop.git
+cd naf-ai-agents-workshop
 ```
 
 ### Step 3: Setup Environment
@@ -348,7 +348,7 @@ Once setup is complete:
 ## Getting Help
 
 - **Troubleshooting**: See this guide above
-- **Issues**: <https://github.com/cdot65/langgraph-workshop-notebooks/issues\>
-- **Discussions**: <https://github.com/cdot65/langgraph-workshop-notebooks/discussions\>
+- **Issues**: <https://github.com/cdot65/naf-ai-agents-workshop/issues\>
+- **Discussions**: <https://github.com/cdot65/naf-ai-agents-workshop/discussions\>
 
 Happy learning! 🚀
